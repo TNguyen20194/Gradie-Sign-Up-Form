@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --clr-primary: #013243;
+  --clr-secondary: #ffffff;
+
+  --clr-accent: #86bfd3;
+  --clr-border: #bcbcbc;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    min-height: 100vh;
+    background-image: url(Assets/Background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+
+.sign-up {
+  --form-padding: 2rem;
+  --form-radius: .5rem;
+  display: grid;
+  max-width: 46rem;
+  overflow: hidden;
+  -webkit-box-shadow: -2px 2px 26px 3px rgba(0,0,0,0.12); 
+  box-shadow: -2px 2px 26px 3px rgba(0,0,0,0.12);
+}
+
+@media (min-width: 600px) {
+  .sign-up {
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--form-radius);
+  }
+}
+
+.sign-up-title{
+ position: relative;
+ text-align: center;
+ padding: var(--form-padding);
+ padding-bottom: 0;
+ background-color: var(--clr-primary);
+}
+
+
+.sign-up-title picture {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+
+.sign-up-title h1{
+  color: var(--clr-secondary);
+}
+
+.sign-up-title p{
+  color: var(--clr-accent);
+}
+
+.sign-up-login{
+  text-align: left;
+  padding: var(--form-padding);
+  background-color: var(--clr-secondary);
+  /* display: grid; */
+}
+
+.sign-up-login h2 {
+  font-size: 2rem;
+}
+.flex-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.email-input{
+  --input-padding: .75rem;
+  border-radius: .3rem;
+  outline: none;
+  border: .5px solid grey;
+  padding: var(--input-padding);
+}
+
+.flex-group, .checkbox {
+  text-align: left;
+}
+
+
+button {
+  --button-padding: .5rem;
+  border-radius: .3rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: var(--button-padding);
+}
+
+button:active{
+  transform: translateY(1px);
+}
