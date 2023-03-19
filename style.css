@@ -54,6 +54,9 @@
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
+  h1, h2, h3{
+    line-height: 1;
+  }
   /*
     9. Create a root stacking context
   */
@@ -66,46 +69,58 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    min-height: 100vh;
     background-image: url(Assets/Background.png);
     background-position: center center;
     background-repeat: no-repeat;
-    display: grid;
-    place-content: center;
-    margin: 1rem;
 }
 
 .sign-up {
-  --form-padding: 2rem;
-  --form-radius: .5rem;
+  --form-padding: 1.5rem;
+  --form-radius: 1rem;
+  --input-padding: .75rem;
+  --button-padding: .5rem;
+  --content-spacing: 1.5rem;
+  position: relative;
   display: grid;
   max-width: 46rem;
+  place-content: center;
   overflow: hidden;
+  border-radius: 
+    0 0 var(--form-radius) var(--form-radius);
+  border: 1px solid var(--clr-border);
   -webkit-box-shadow: -2px 2px 26px 3px rgba(0,0,0,0.12); 
   box-shadow: -2px 2px 26px 3px rgba(0,0,0,0.12);
 }
 
 @media (min-width: 600px) {
+  body {
+    display: grid;
+    place-content: center;
+    margin-inline: 1rem;
+  }
   .sign-up {
     grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--clr-border);
     border-radius: var(--form-radius);
+  }
+  .sign-up-title, .sign-up-login{
+    --form-padding: 2rem;
   }
 }
 
 .sign-up-title{
- position: relative;
+ display: grid;
  text-align: center;
- padding: var(--form-padding);
+ padding: var(--form-padding) calc(var(--form-padding) * 1.5);
  padding-bottom: 0;
  background-color: var(--clr-primary);
 }
 
+.image-container{
+  width: 100%;
+}
 
-.sign-up-title picture {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
+.image-container img {
+    height: auto;
 }
 
 .sign-up-title h1{
@@ -117,10 +132,11 @@ body {
 }
 
 .sign-up-login{
+  display: grid;
+  gap: var(--content-spacing);
   text-align: left;
-  padding: var(--form-padding);
+  padding: var(--form-padding) calc(var(--form-padding) * 1.5);
   background-color: var(--clr-secondary);
-  /* display: grid; */
 }
 
 .sign-up-login h2 {
@@ -132,20 +148,32 @@ body {
 }
 
 .email-input{
-  --input-padding: .75rem;
   border-radius: .3rem;
   outline: none;
   border: .5px solid grey;
   padding: var(--input-padding);
+  line-height: 1;
 }
 
 .flex-group, .checkbox {
   text-align: left;
 }
 
+.terms label {
+  display: flex;
+}
+.terms input {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+  margin-right: 10px;
+ }
+
 
 button {
-  --button-padding: .5rem;
   border-radius: .3rem;
   background-color: var(--clr-primary);
   color: var(--clr-secondary);
