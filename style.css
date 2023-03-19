@@ -112,15 +112,14 @@ body {
 .sign-up-title{
  display: grid;
  text-align: center;
- padding: var(--form-padding) calc(var(--form-padding) * 1.5);
- padding-bottom: 0;
+ padding-top: var(--form-padding);
  background: rgb(134,191,211);
  background: linear-gradient(0deg, rgba(134,191,211,1) 4%, rgba(69,122,140,1) 33%, rgba(30,81,98,1) 51%, rgba(17,67,84,1) 61%, rgba(1,50,67,1) 76%);
 }
 
 .image-container{
   width: 100%;
-  margin-top: auto;
+  margin-top: -7rem;
 }
 
 .image-container img {
@@ -141,6 +140,7 @@ body {
 .sign-up-login{
   display: grid;
   gap: var(--content-spacing);
+  align-items: start;
   text-align: left;
   padding: var(--form-padding) calc(var(--form-padding) * 1.5);
   background-color: var(--clr-secondary);
